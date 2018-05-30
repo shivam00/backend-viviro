@@ -1,0 +1,65 @@
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#summernote').summernote(
+    {
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', '#252525'],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['picture',['picture']],
+            ['link',['link']],
+            ['video',['video']],
+            ['table',['table']],
+            ['hr',['hr']],
+            ['codeview',['codeview']],
+            
+        ], height: 200
+    }
+);
+});
+</script>
+<body>
+    <h1>Add</h1>
+    <form name="form1" method="POST" action="/add">
+    <table>
+        <tr>
+            <h3>Sno:#</h3>
+        </tr>
+        <tr>
+                <input  name="sno" type="number" value="<%= sno %>" />
+        </tr> 
+        <tr>
+            <h3>Broadcaster</h3>
+        </tr>
+        <tr>
+                <select name="user">
+                    <option value="Palak Zatakia">Palak Zatakia</option>
+                    <option value="Supriya Paul">Supriya Paul</option>
+                </select>
+        </tr>
+        <tr>
+           <h3> Broadcast</h3>
+        </tr>
+        <tr>
+        <textarea id="summernote" name="fname"><p style="font-size:17"><%= data %></textarea>
+        </tr>
+        <tr>
+        <td colspan="2"><input type="submit" value="addnew" name="up"></td>
+        <td colspan="2"><input type="submit" value="update" name="up"></td>
+        <%= status %>
+        </tr>
+    </table>
+    </form>   
+ 
+</body>
+
+  
